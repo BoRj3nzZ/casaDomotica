@@ -35,7 +35,7 @@ public class RelojFrame extends JLabel{
 			font = font.deriveFont(Font.BOLD,170);
 		} catch (FontFormatException | IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log("Exception", e);
 		}
 		Timer timer = new Timer(10, new ActionListener() {
 			@Override

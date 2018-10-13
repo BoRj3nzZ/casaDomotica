@@ -253,7 +253,7 @@ public class DialogoAñadirEditarED extends JDialog {
 				botonRegulable.setSelected(true);
 			} else if (selectedED instanceof EDProgramable) {
 				botonProgramable.setSelected(true);
-			} else if (selectedED instanceof EDProgramable) {
+			} else if (selectedED instanceof EDProgAndReg) {
 				botonProgReg.setSelected(true);
 			} else if (selectedED instanceof ED) {
 				botonNormal.setSelected(true);
@@ -495,10 +495,10 @@ public class DialogoAñadirEditarED extends JDialog {
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log("Exception", e);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log("Exception", e);
 		}
 
 		return s;

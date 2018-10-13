@@ -326,7 +326,7 @@ public class VentanaPrincipal extends JFrame implements Observer {
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log("Exception", e);
 		}
 		VentanaPrincipal p = new VentanaPrincipal();
 	}
