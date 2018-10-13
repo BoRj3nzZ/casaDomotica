@@ -125,7 +125,7 @@ public class VentanaPrincipal extends JFrame implements Observer {
 	private Component crearPanelListaZonas() {
 		pListaZonas = new JPanel(new GridLayout(casa.getSize() - 1, 1));
 		pListaZonas.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
-		// inicializarZonas(); //TODO cargar la casa con sus casa
+		// inicializarZonas();
 		for (Zona z : casa.getCopiaLista()) {
 			if (!z.isSelected()) {
 				pListaZonas.add(crearBotonZona(z, z.getNombre()));
@@ -315,7 +315,6 @@ public class VentanaPrincipal extends JFrame implements Observer {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
 
 		}
 	}
@@ -325,7 +324,6 @@ public class VentanaPrincipal extends JFrame implements Observer {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException e) {
-			// TODO Auto-generated catch block
 			LOGGER.log("Exception", e);
 		}
 		VentanaPrincipal p = new VentanaPrincipal();

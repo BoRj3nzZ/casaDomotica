@@ -167,6 +167,7 @@ public class SpeechRecognizer {
 				} catch (Exception ex) {
 					logger.log(Level.WARNING, null, ex);
 					speechRecognizerThreadRunning = false;
+					throw ex;
 				}
 
 				logger.log(Level.INFO, "SpeechThread has exited...");
@@ -236,7 +237,7 @@ public class SpeechRecognizer {
 	 */
 	public void Temporizador(int segundos) {
 		timer = new Timer();
-		timer.schedule(new Task(), segundos * 1000);
+		timer.schedule(new Task(), segundos * (long)1000);
 		System.out.println("Empieza timer");
 		
 		
@@ -246,7 +247,6 @@ public class SpeechRecognizer {
 
 		@Override
 		public void run() {
-			// TODO Auto-generated method stub
 			System.out.println("Timer acaba");
 			clave = false;
 			timer.cancel();

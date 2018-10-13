@@ -20,7 +20,7 @@ import vista.MiBotonEstado;
 import vista.MiBotonZona;
 import vista.VentanaPrincipal;
 
-public class ControladorVoz extends Thread {
+public class ControladorVoz{
 
 	ED electrodomestico;
 	Thread hilo;
