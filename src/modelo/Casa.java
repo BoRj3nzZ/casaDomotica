@@ -27,13 +27,14 @@ public class Casa{
 	public List<Zona> cargarDatosFichero(String rutaCasa) {
 		String linea;
 		Zona z;
-		List<Zona> lista = new ArrayList<>();
+		List<Zona> list = new ArrayList<>();
 		
 		try (BufferedReader in = new BufferedReader(new InputStreamReader(
 			    new FileInputStream(rutaCasa), "UTF-8"))) {
 			
 			while ((linea = in.readLine()) != null) {
-				lista.add(z = new Zona(linea));
+				z = new Zona(linea)
+				list.add(z);
 				while (!(linea = in.readLine()).contains("*")) {
 					if (linea.startsWith("#")){
 						z.addED(new EDRegulable(linea.substring(1)));				
@@ -48,10 +49,8 @@ public class Casa{
 				
 			}
 
-		} catch (FileNotFoundException e) {
-			LOGGER.log("Exception", e);
-		} catch (IOException e) {
-			LOGGER.log("Exception", e);
+		} catch (FileNotFoundException e || IOException e) {
+			logger.log("Exception", e);
 		}
 		return lista;
 	}
@@ -68,10 +67,8 @@ public class Casa{
 				out.println("*");
 			}
 
-		} catch (FileNotFoundException e) {
-			LOGGER.log("Exception", e);
-		} catch (IOException e) {
-			LOGGER.log("Exception", e);
+		} catch (FileNotFoundException e || IOException e) {
+			logger.log("Exception", e);
 		}
 
 	}

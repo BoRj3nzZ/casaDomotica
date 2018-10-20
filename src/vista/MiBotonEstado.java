@@ -8,13 +8,12 @@ import javax.swing.SwingConstants;
 
 public class MiBotonEstado extends JButton{
 	String nombre;
-	final static String PATHIMG= "Imagenes/";
+	static final String PATHIMG= "Imagenes/";
 	Boolean estado;
 	ImageIcon imageIcon;
 	
 	public MiBotonEstado(Boolean estado){
 		this.estado = estado;
-		//this.nombre = nombre;
 		this.imageIcon = this.estado? new ImageIcon(PATHIMG+"On.png"):new ImageIcon(PATHIMG+"Off.png");
 		this.setIcon(imageIcon);
 		this.setHorizontalAlignment(SwingConstants.CENTER);

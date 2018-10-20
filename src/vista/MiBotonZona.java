@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
 import modelo.Zona;
 
 public class MiBotonZona extends JButton {
-	final static String PATHIMG= "Imagenes/";
+	static final String PATHIMG= "Imagenes/";
 	Image imagen;
 	String name;
 	ImageIcon imageIcon;
@@ -34,16 +34,14 @@ public class MiBotonZona extends JButton {
 	
 	public void setZona(Zona zona){
 		this.name = zona.getNombre();
-		//this.zona.select();
 		this.zona = zona;
-		//this.zona.select();
-		ImageIcon imageIcon = new ImageIcon(PATHIMG + zona.getImagen()); // load the image to a imageIcon
-		this.imagen = imageIcon.getImage().getScaledInstance(1000/numZonas, 1000/numZonas,  Image.SCALE_SMOOTH); // transform it 
-		imageIcon = new ImageIcon(imagen);  // transform it back
+		ImageIcon imageIco = new ImageIcon(PATHIMG + zona.getImagen()); // load the image to a imageIcon
+		this.imagen = imageIco.getImage().getScaledInstance(1000/numZonas, 1000/numZonas,  Image.SCALE_SMOOTH); // transform it 
+		imageIco = new ImageIcon(imagen);  // transform it back
 		
 		this.setText(name);
 		this.setActionCommand(name);
-		this.setIcon(imageIcon);
+		this.setIcon(imageIco);
 		this.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		repaint();
@@ -66,7 +64,7 @@ public class MiBotonZona extends JButton {
 	public ImageIcon getImageIcon() {
 		return imageIcon;
 	}
-
+	@Override
 	public String getName() {
 		return name;
 	}

@@ -48,6 +48,8 @@ public class ControladorToolBarTiposZonaConfig implements ActionListener {
 			vista.setActualType("Salón");
 			vista.getListaSeleccion().setListData(casaModelo.getStringsByType(tipo));
 			break;
+		default:
+			break;
 		}
 		for (JButton b : vista.getListaBotonesAcciones()){
 			if (b.getText().equals(e.getActionCommand())){

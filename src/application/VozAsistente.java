@@ -40,8 +40,6 @@ public class VozAsistente {
 					// Create a JLayer instance
 					player = new AdvancedPlayer(synthesizer.getMP3Data(text));
 					player.play();
-
-					System.out.println("Successfully got back synthesizer data");
 					player = null;
 
 				} catch (IOException | JavaLayerException e) {

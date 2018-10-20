@@ -17,7 +17,8 @@ import javax.swing.Timer;
 
 public class RelojFrame extends JLabel{
 	Calendar calendario;
-	int hora, minutos;
+	int hora;
+	int minutos;
 	private JLabel label;
 
 	public RelojFrame() {

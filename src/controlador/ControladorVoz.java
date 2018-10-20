@@ -1,8 +1,6 @@
 package controlador;
 
 import java.awt.Toolkit;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -11,8 +9,6 @@ import application.SpeechRecognizer;
 import application.VozAsistente;
 import modelo.Casa;
 import modelo.ED;
-import modelo.EDProgAndReg;
-import modelo.EDRegulable;
 import modelo.Zona;
 import vista.DialogoED;
 import vista.MiBotonED;
@@ -93,11 +89,9 @@ public class ControladorVoz{
 
 											if (b.getEstado() && palabra.equals("apagar")) {
 
-												System.out.println("Boton Apagar");
 												b.doClick();
 												return;
 											} else if (!b.getEstado() && palabra.equals("encender")) {
-												System.out.println("Boton Encender");
 												b.doClick();
 												return;
 											}
@@ -114,7 +108,6 @@ public class ControladorVoz{
 									if (palabra.contains("cancelar") || palabra.contains("aceptar")) {
 										for (JButton boton : dialogo.getBotonesOKyCancel()) {
 											if (palabra.equalsIgnoreCase(boton.getActionCommand())) {
-												System.out.println("Boton " + boton.getActionCommand());
 												boton.doClick();
 												return;
 											}
@@ -126,7 +119,6 @@ public class ControladorVoz{
 					}
 				}
 			}
-			// } else {
 			if (vista.getFlag() == 0) {
 
 				for (int i = 0; i < palabrasZona.length; i++) {

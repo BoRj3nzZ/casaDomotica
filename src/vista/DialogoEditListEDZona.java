@@ -6,13 +6,10 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.util.List;
 
 import javax.swing.AbstractAction;
-import javax.swing.AbstractListModel;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
-import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,7 +17,6 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
@@ -31,7 +27,9 @@ import modelo.Zona;
 
 public class DialogoEditListEDZona extends JDialog {
 
-	AbstractAction accAñadir, accBorrar, accEdit;
+	AbstractAction accAñadir;
+	AbstractAction accBorrar;
+	AbstractAction accEdit;
 
 	RendererEDConfig rendererEDConfig;
 
@@ -152,7 +150,6 @@ public class DialogoEditListEDZona extends JDialog {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
 
 		}
 	}

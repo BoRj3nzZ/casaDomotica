@@ -41,6 +41,8 @@ public class ControladorListaEDConfig implements ActionListener {
 				new DialogoAñadirEditarED(vista, "Editar electrodoméstico", true, false);
 			}
 			break;
+		default:
+			break;
 		}
 	}
 

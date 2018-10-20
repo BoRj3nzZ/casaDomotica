@@ -22,7 +22,6 @@ public class ControladorAñadirEditarED implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		ED ed;
 		switch (e.getActionCommand()) {
 		case "ok":
 			try{
@@ -85,6 +84,8 @@ public class ControladorAñadirEditarED implements ActionListener {
 			for (String s : vista.getOpcionesProgReg()) {
 				vista.getNombreED().addItem(s);
 			}
+			break;
+		default:
 			break;
 		}
 	}

@@ -18,7 +18,8 @@ public class ControladorAñadirEditarZona implements ActionListener {
 	String img;
 	Casa casa;
 	String tipo;
-	boolean fileSelected = false, estaAñadiendo;
+	boolean fileSelected = false;
+	boolean estaAñadiendo;
 
 	public ControladorAñadirEditarZona(DialogoAñadirEditarZona vista, Casa casa, boolean estaAñadiendo) {
 		this.vista = vista;

@@ -2,8 +2,6 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JOptionPane;
 import modelo.Casa;
@@ -41,6 +39,8 @@ public class ControladorAccionesMenuConfig implements ActionListener {
 			break;
 		case "Editar":
 			DialogoAñadirEditarZona d2 = new DialogoAñadirEditarZona(vista, "Añadir Zona", true, false, casaModelo);			
+			break;
+		default:
 			break;
 		}
 		vista.updateList();

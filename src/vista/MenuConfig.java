@@ -38,7 +38,7 @@ import modelo.Casa;
 import modelo.Zona;
 
 public class MenuConfig extends JFrame {
-	final static String PATHIMG = "Imagenes/";
+	static final String PATHIMG = "Imagenes/";
 	String actualType;
 	Casa casaMenu;
 	
@@ -49,10 +49,20 @@ public class MenuConfig extends JFrame {
 	ControladorListaZonasConfig controladorListaZonas;
 	ControladorBotonesConfig controladorBotones;
 
-	AbstractAction accCargar, accSalir, accAnadir, accBorrar, accEditar, accBaño, accCocina, accSalon, accHabitacion,
-			accJardin, accOtros;
+	AbstractAction accCargar;
+	AbstractAction accSalir;
+	AbstractAction accAnadir;
+	AbstractAction accBorrar;
+	AbstractAction accEditar;
+	AbstractAction accBaño;
+	AbstractAction accCocina;
+	AbstractAction accSalon;
+	AbstractAction accHabitacion;
+	AbstractAction accJardin;
+	AbstractAction accOtros;
 
-	JButton bSalir, bCargar;
+	JButton bSalir;
+	JButton bCargar;
 	JMenuBar barra;
 	JMenu menuEdit;
 	JMenuItem opcionMenu;
@@ -62,8 +72,8 @@ public class MenuConfig extends JFrame {
 	
 	RendererZonaConfig renderer;
 	
-	List<JButton> listaBotonesAcciones;
-	List<Zona> listaPorTipos;
+	private List<JButton> listaBotonesAcciones;
+	private List<Zona> listaPorTipos;
 
 	Toolkit toolkit = Toolkit.getDefaultToolkit();
 
@@ -140,7 +150,6 @@ public class MenuConfig extends JFrame {
 				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		actualType = "baño";
 		listaSeleccion = new JList<>();
-		//listaSeleccion.setModel(casa);
 		listaSeleccion.setListData(casaMenu.getStringsByType(actualType));
 		listaSeleccion.setCellRenderer(renderer);
 		listaSeleccion.setSelectedIndex(0);
@@ -161,20 +170,21 @@ public class MenuConfig extends JFrame {
 	}
 
 	private JMenu crearMenuAcciones() {
+		String arial="arial";
 		menuEdit = new JMenu("Menu");
-		menuEdit.setFont(new Font("arial", Font.PLAIN, 30));
+		menuEdit.setFont(new Font(arial, Font.PLAIN, 30));
 		menuEdit.setMnemonic(KeyEvent.VK_A);
 
 		opcionMenu = menuEdit.add(accAnadir);
-		opcionMenu.setFont(new Font("arial", Font.PLAIN, 30));
+		opcionMenu.setFont(new Font(arial, Font.PLAIN, 30));
 		opcionMenu.addActionListener(controladorConfig);
 		opcionMenu.setActionCommand("Añadir");
 		opcionMenu = menuEdit.add(accBorrar);
-		opcionMenu.setFont(new Font("arial", Font.PLAIN, 30));
+		opcionMenu.setFont(new Font(arial, Font.PLAIN, 30));
 		opcionMenu.addActionListener(controladorConfig);
 		opcionMenu.setActionCommand("Borrar");
 		opcionMenu = menuEdit.add(accEditar);
-		opcionMenu.setFont(new Font("arial", Font.PLAIN, 30));
+		opcionMenu.setFont(new Font(arial, Font.PLAIN, 30));
 		opcionMenu.addActionListener(controladorConfig);
 		opcionMenu.setActionCommand("Editar");
 
@@ -239,7 +249,8 @@ public class MenuConfig extends JFrame {
 	}
 
 	public void updateList() {
-		panelLista.setViewportView(listaSeleccion = new JList<>(casaMenu.getStringsByType(actualType)));
+		listaSeleccion = new JList<>(casaMenu.getStringsByType(actualType))
+		panelLista.setViewportView(listaSeleccion);
 		listaSeleccion.setCellRenderer(renderer);
 		listaSeleccion.setSelectedIndex(0);
 		listaSeleccion.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -283,19 +294,12 @@ public class MenuConfig extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
 		public String toString() {
-			// TODO Auto-generated method stub
 			return texto;
 		}
 	}
-
-	/*public static void main(String[] args) {
-		MenuConfig p = new MenuConfig();
-
-	}*/
 }
